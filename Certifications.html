@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanket Sahane | Certifications</title>
+ <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+<style>
+/* ===== GLOBAL ===== */
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background:linear-gradient(120deg,#050d1f,#020617);
+  color:#fff;
+}
+
+/* ===== NAVBAR ===== */
+/* nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+}
+
+.logo{
+  font-size:22px;
+  font-weight:600;
+  color:#00f7ff;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#fff;
+  position:relative;
+}
+
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  background:#00f7ff;
+  left:0;
+  bottom:-5px;
+  transition:.3s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+} */
+
+/* ===== CERTIFICATIONS ===== */
+.certifications{
+  padding:70px 40px;
+  text-align:center;
+}
+
+.certifications h2{
+  font-size:38px;
+  margin-bottom:40px;
+  color:#00f7ff;
+}
+
+/* GRID */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* CARD */
+.cert-card{
+  background:rgba(255,255,255,0.05);
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 0 25px rgba(0,255,255,0.15);
+  transition:.5s;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  max-width:320px;     /* 🔽 size control */
+  margin:auto;
+  padding:16px;
+}
+
+.cert-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,#00f7ff,transparent);
+  opacity:0;
+  transition:.5s;
+}
+
+.cert-card:hover::before{
+  opacity:0.15;
+}
+
+.cert-card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 40px rgba(0,255,255,0.6);
+}
+
+.cert-card img{
+  
+  width:100%;
+  height:180px;        /* 🔽 image height fixed */
+  object-fit:cover;   /* image distort honar nahi */
+  border-radius:10px;
+  border-radius:12px;
+}
+
+.cert-card h3{
+  margin:15px 0 8px;
+  color:#00f7ff;
+}
+
+.cert-card p{
+  font-size:14px;
+  color:#ccc;
+}
+
+/* ===== FULLSCREEN IMAGE ===== */
+#fullscreen{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  animation:fadeIn .4s ease;
+}
+
+#fullscreen img{
+  max-width:85%;
+  max-height:85%;
+  border-radius:18px;
+  animation:zoomIn .4s ease;
+  box-shadow:0 0 40px #00f7ff;
+}
+
+.close-btn{
+  position:absolute;
+  top:25px;
+  right:35px;
+  font-size:45px;
+  color:#00f7ff;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.close-btn:hover{
+  transform:rotate(90deg) scale(1.2);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes zoomIn{
+  from{transform:scale(0.6);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#020617;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo-box">
+  <div class="nav-logo">
+    <img src="sanket.png" alt="Logo">
+  </div>
+  <span class="logo-text">Sanket Sahane</span>
+</div>
+  <ul class="nav-links">
+  <li><a href="home.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="suu.html">Skills</a></li>
+  <li><a href="project.html">Projects</a></li>
+  <li><a href="AIdemo.html">AI Demo</a></li>
+  <li><a href="techstack.html">Tech Stack</a></li>
+  <li><a href="Certifications.html">Certifications</a></li>
+  <li><a href="resume.html">Resume</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- CERTIFICATIONS -->
+<section class="certifications">
+<h2>My Certifications</h2>
+
+<div class="cert-grid">
+
+  <div class="cert-card" onclick="openImage(this)">
+    <img src="SQL.jpg">
+    <h3>SQL For Data Analytics</h3>
+    <p>Hands-on SQL training with real world analytics projects.</p>
+  </div>
+
+  <div class="cert-card" onclick="openImage(this)">
+    <img src="data science.png">
+    <h3>SQL for Data Science</h3>
+    <p>Advanced SQL queries and database analysis skills.</p>
+  </div>
+
+  <div class="cert-card" onclick="openImage(this)">
+    <img src="GI.png">
+    <h3>Generative AI Fundamentals</h3>
+    <p>Introduction to modern AI models and prompt engineering.</p>
+  </div>
+   <div class="cert-card" onclick="openImage(this)">
+    <img src="GI.png">
+    <h3>Generative AI Fundamentals</h3>
+    <p>Introduction to modern AI models and prompt engineering.</p>
+  </div>
+
+</div>
+</section>
+
+<!-- FULLSCREEN VIEW -->
+<div id="fullscreen" onclick="closeImage()">
+  <span class="close-btn" onclick="closeImage()">×</span>
+  <img id="full-img">
+</div>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Sanket Sahane
+</footer>
+
+<!-- JS -->
+<script>
+function openImage(card){
+  const img = card.querySelector("img");
+  document.getElementById("full-img").src = img.src;
+  document.getElementById("fullscreen").style.display="flex";
+}
+
+function closeImage(){
+  document.getElementById("fullscreen").style.display="none";
+}
+</script>
+ <script src="script.js"></script>
+</body>
+</html>

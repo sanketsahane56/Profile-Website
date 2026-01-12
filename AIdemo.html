@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanket Sahane | AI Portfolio</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo-box">
+  <div class="nav-logo">
+    <img src="sanket.png" alt="Logo">
+  </div>
+  <span class="logo-text">Sanket Sahane</span>
+</div>
+    <ul class="nav-links">
+      <ul class="nav-links">
+  <li><a href="home.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="suu.html">Skills</a></li>
+  <li><a href="project.html">Projects</a></li>
+  <li><a href="aidemo.html">AI Demo</a></li>
+  <li><a href="techstack.html">Techstack</a></li>
+  <li><a href="Certifications.html">Certifications</a></li>
+  <li><a href="resume.html">Resume</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
+    </ul>
+  </nav>
+<section id="ai-demo" class="ai-demo">
+  <h2>AI Demo</h2>
+  <p class="ai-sub">Live AI Thinking Experience</p>
+
+  <div class="ai-container">
+
+    <!-- AI TEXT -->
+    <div class="ai-card">
+      <h3>🤖 AI Text Generator</h3>
+      <textarea id="aiTextInput" placeholder="Ask AI something..."></textarea>
+      <button onclick="runTextAI()">Generate Text</button>
+    </div>
+
+    <!-- AI IMAGE -->
+    <!-- <div class="ai-card">
+      <h3>🖼 AI Image Prompt</h3>
+      <input type="text" id="aiImgInput" placeholder="Describe image (e.g. rose)">
+      <button onclick="runImageAI()">Generate Image</button>
+    </div> -->
+
+  </div>
+
+  <!-- THINKING -->
+  <div id="aiThinking" class="ai-thinking">
+    <div class="spinner"></div>
+    <p id="thinkingText">AI is thinking...</p>
+    <br>
+  </div>
+
+  <!-- RESULT -->
+  <div id="aiResult" class="ai-result"></div>
+</section>
+
+
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true
+  });
+</script>
+
+
+</body>
+</html>

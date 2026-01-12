@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Projects Section</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:linear-gradient(135deg,#050505,#0f2027,#203a43);
+  color:#fff;
+}
+
+/* ===== PROJECT SECTION ===== */
+.projects{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.projects h1{
+  color:#00ffff;
+  margin-bottom:40px;
+  font-size:36px;
+}
+
+/* PROJECT CARDS */
+.project-cards{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:70px;
+}
+
+.card{
+  background:#1a1a1a;
+  width:280px;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(0,255,255,0.2);
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 50px cyan;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card p{
+  font-size:14px;
+  color:#ccc;
+}
+
+.card a{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 18px;
+  background:#00ffff;
+  color:#000;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* ===== GALLERY ===== */
+.gallery-title{
+  font-size:28px;
+  margin-bottom:30px;
+  color:#ff77ff;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:20px;
+  cursor:pointer;
+  transition:0.4s;
+  box-shadow:0 0 20px rgba(0,255,255,0.3);
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 45px cyan;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  visibility:hidden;
+  transition:0.4s;
+  z-index:9999;
+}
+
+.lightbox.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.lightbox img{
+  max-width:85vw;
+  max-height:85vh;
+  border-radius:25px;
+  animation:zoom 0.4s ease;
+  box-shadow:0 0 60px cyan;
+}
+
+.lightbox .close{
+  position:absolute;
+  top:25px;
+  right:35px;
+  font-size:40px;
+  cursor:pointer;
+  color:#00ffff;
+}
+
+@keyframes zoom{
+  from{transform:scale(0.6);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+/* PROJECT FULLSCREEN */
+#fullscreen{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.4s ease;
+}
+
+#fullscreen img{
+  max-width: 85vw;
+  max-height: 85vh;
+  border-radius: 25px;
+  box-shadow: 0 0 60px cyan;
+  animation: zoom 0.4s ease;
+}
+
+#fullscreen .close-btn{
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 45px;
+  color: #00ffff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#fullscreen .close-btn:hover{
+  transform: rotate(90deg) scale(1.1);
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+</style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">Sanket Sahane</div>
+    <ul class="nav-links">
+      <ul class="nav-links">
+  <li><a href="home.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="suu.html">Skills</a></li>
+  <li><a href="project.html">Projects</a></li>
+  <li><a href="AIdemo.html">AI Demo</a></li>
+  <li><a href="techstack.html">Tech Stack</a></li>
+  <li><a href="Certifications.html">Certifications</a></li>
+  <li><a href="resume.html">Resume</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
+    </ul>
+  </nav>
+
+<section class="projects">
+  <h1>Projects</h1>
+
+  <div class="cert-grid">
+
+  <div class="cert-card" onclick="openImage(this)">
+    <img src="resumeweb.png">
+      <h3>Resume Creator</h3>
+      <p>Resume Creator Website.</p>
+      <a href="https://sanketsahane56.github.io/resume-creator-/" target="_blank">
+        View Project
+      </a>
+    </div>
+
+
+  <div class="cert-card" onclick="openImage(this)">
+    <img src="profileweb.png">
+      <h3>Portfolio Webpage</h3>
+      <p>fully Animated Portfolio webpage</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+</div>
+
+  </div>
+</section>
+
+
+  <!-- GALLERY -->
+  <h2 class="gallery-title">Project Gallery</h2>
+
+  <div class="gallery">
+    <img src="cake.jpeg">
+    <img src="gov.png">
+    <img src="flower.jpeg">
+    <img src="drug.png">
+  </div>
+</section>
+<!-- FULLSCREEN VIEW -->
+<div id="fullscreen" onclick="closeImage()">
+  <span class="close-btn" onclick="closeImage()">×</span>
+  <img id="full-img">
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img">
+</div>
+<footer>© 2026 Sanket Sahane</footer>
+<script>
+const images = document.querySelectorAll(".gallery img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+
+/* OPEN */
+images.forEach(img=>{
+  img.addEventListener("click",()=>{
+    lightbox.classList.add("active");
+    lightboxImg.src = img.src;
+  });
+});
+
+/* CLOSE BUTTON */
+closeBtn.addEventListener("click",()=>{
+  lightbox.classList.remove("active");
+});
+
+/* BACKGROUND CLICK */
+lightbox.addEventListener("click",(e)=>{
+  if(e.target !== lightboxImg){
+    lightbox.classList.remove("active");
+  }
+});
+
+/* ESC KEY */
+document.addEventListener("keydown",(e)=>{
+  if(e.key==="Escape"){
+    lightbox.classList.remove("active");
+  }
+});
+</script>
+<script>
+function openImage(card){
+  const img = card.querySelector("img");
+  document.getElementById("full-img").src = img.src;
+  document.getElementById("fullscreen").style.display="flex";
+}
+
+function closeImage(){
+  document.getElementById("fullscreen").style.display="none";
+}
+function openImage(card){
+  const img = card.querySelector("img");
+  const fullscreen = document.getElementById("fullscreen");
+  const fullImg = document.getElementById("full-img");
+
+  fullImg.src = img.src;
+  fullscreen.style.display = "flex";
+}
+
+function closeImage(){
+  document.getElementById("fullscreen").style.display = "none";
+}
+
+/* background click close */
+document.getElementById("fullscreen").addEventListener("click",(e)=>{
+  if(e.target.id === "fullscreen"){
+    closeImage();
+  }
+});
+
+/* ESC key close */
+document.addEventListener("keydown",(e)=>{
+  if(e.key === "Escape"){
+    closeImage();
+  }
+});
+
+</script>
+ <script src="script.js"></script>
+
+</body>
+</html>
