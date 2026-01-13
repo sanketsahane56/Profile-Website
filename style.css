@@ -367,9 +367,9 @@ nav {
   min-height: 100vh;
   background: linear-gradient(
     120deg,
-    #0f0c29,
-    #302b63,
-    #00a6ff
+    #142d26,
+    #0d1117,
+    #0f172a
   );
   background-size: 400% 400%;
   animation: homeBG 12s ease infinite;
@@ -388,7 +388,7 @@ nav {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle, rgba(0,255,255,0.25), transparent 70%);
+  background: radial-gradient(circle, rgba(15,23,42,0.6), transparent 70%);
   animation: glowMove 6s infinite alternate;
 }
 
@@ -522,7 +522,7 @@ section:not(.home-wallpaper) {
   margin: 6px;
   border-radius: 20px;
   background: rgba(0,255,255,0.15);
-  color: cyan;
+  color: rgb(16, 30, 30);
   font-size: 14px;
 }
 
@@ -1293,3 +1293,72 @@ section:not(.home-wallpaper) {
 
 
 
+
+
+/* ===== BLACK SECTION OVERLAP FIX (MOBILE) ===== */
+@media (max-width:768px){
+
+  section{
+    height:auto !important;
+    min-height:auto !important;
+    position:relative !important;
+    overflow:visible !important;
+  }
+
+  body{
+    overflow-x:hidden;
+  }
+
+}
+
+
+/* ===== FLEXIBLE NAVBAR (NO TOGGLE) ===== */
+nav{
+  flex-wrap:wrap;
+}
+
+.nav-links{
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.nav-links li{
+  white-space:nowrap;
+}
+
+@media(max-width:768px){
+  .nav-links{
+    width:100%;
+    justify-content:center;
+  }
+}
+
+
+/* ===== CONTROLLED FLEX NAVBAR (NO DISAPPEAR) ===== */
+nav{
+  overflow:visible;
+}
+
+.nav-links{
+  max-width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.nav-links li{
+  flex:0 0 auto;
+}
+
+@media(max-width:900px){
+  .nav-links{
+    max-height:80px; /* roughly 2 lines */
+  }
+}
+
+/* Remove underline from social icons */
+.social-icons a,
+.social-links a,
+a {
+  text-decoration: none !important;
+}
